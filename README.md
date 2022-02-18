@@ -1,2 +1,2 @@
-# my-simple-site
+# Мой сайт-визитка для примера
 My promo site
