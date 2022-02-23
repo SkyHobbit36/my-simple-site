@@ -6,5 +6,5 @@ Was made to practice
 
 ## Was used
 * git
-* yarn \n
-* gulp, gulp-clean-css, gulp-clean, gulp-concat, gulp-replace \n
+* yarn 
+* gulp, gulp-clean-css, gulp-clean, gulp-concat, gulp-replace
