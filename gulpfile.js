@@ -25,7 +25,12 @@ const css = () => {
     .pipe(dest(DIR_NAME))
 }
 
+const favicon = () => {
+  return src('favicon.ico')
+    .pipe(dest(DIR_NAME))
+}
+
 exports.default = series(
   cleanDist,
-  parallel(css, html)
+  parallel(css, html, favicon)
 )
