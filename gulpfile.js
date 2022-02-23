@@ -13,7 +13,7 @@ const cleanDist = () => {
 
 const html = () => {
   return src('index.html')
-    .pipe(replace('<link rel="stylesheet" href="./css/style.css">', '<link rel="stylesheet" href="style.css">'))
+    .pipe(replace('<link rel="stylesheet" href="./css/main.css">', '<link rel="stylesheet" href="style.css">'))
     .pipe(replace('./img/', '../img/'))
     .pipe(dest(DIR_NAME))
 }
