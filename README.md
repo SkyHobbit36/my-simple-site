@@ -2,6 +2,6 @@
 Was made to practice
 
 ## Was used
-gulp, clean-css, concat, browser-sync
-yarn
-git
+git \n
+yarn \n
+gulp, gulp-clean-css, gulp-clean, gulp-concat, gulp-replace \n
