@@ -9,7 +9,7 @@ h1 {
 	text-transform: uppercase;
 }
 h2 {
-	font-size: 48px;
+	font-size: 46px;
 	text-transform: uppercase;
 }
 h3 {
@@ -26,5 +26,6 @@ h4 {
 }
 
 .yellowGradientBg {
-	background: linear-gradient(95.38deg, #F3C03B 23.75%, #CB8A29 90.88%);
+	/* background: linear-gradient(95.38deg, #F3C03B 23.75%, #CB8A29 90.88%); */
+	background: linear-gradient(104deg, #c9950c, #efc24b ,#ad7013 80%);
 }
