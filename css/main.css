@@ -5,7 +5,6 @@
 @import "_global.css";
 @import "_overall.css";
 
-
 @import "./components/header.css";
 @import "./components/first.css";
 @import "./components/second.css";

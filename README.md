@@ -1,10 +1,14 @@
-# My promo site
-Was made to practice
+# Сайт для примера
 
-## Demo
+Практика адапривной версти лендинга
+
+## Демо
+
 [link to Github Pages](https://skyhobbit36.github.io/my-simple-site/dist/)
 
-## Was used
-* git
-* yarn 
-* gulp, gulp-clean-css, gulp-clean, gulp-concat, gulp-replace
+## Технологии
+
+- git
+- yarn
+- gulp
+- eslint, prettier
