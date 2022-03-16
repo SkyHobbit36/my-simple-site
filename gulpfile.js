@@ -4,7 +4,6 @@ import clean from 'gulp-clean'
 import concat from 'gulp-concat'
 import replace from 'gulp-replace'
 import image from 'gulp-imagemin'
-// import browserSync from 'browser-sync'
 import uglify from 'gulp-uglify'
 import rename from 'gulp-rename'
 
