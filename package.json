@@ -8,8 +8,7 @@
   "type": "module",
   "scripts": {
     "build": "gulp",
-    "dev": "gulp dev",
-    "watch": "gulp watch"
+    "dev": "gulp dev"
   },
   "devDependencies": {
     "browser-sync": "^2.27.7",

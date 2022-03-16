@@ -4,71 +4,65 @@ import clean from 'gulp-clean'
 import concat from 'gulp-concat'
 import replace from 'gulp-replace'
 import image from 'gulp-imagemin'
-import browserSync from 'browser-sync'
+// import browserSync from 'browser-sync'
 import uglify from 'gulp-uglify'
 import rename from 'gulp-rename'
 
-browserSync.create()
 
-const OUTPUT_PATH = 'dist'
-const CSS_PATH = 'css/**/*.css'
-const JS_PATH = 'js/main.js'
-const HTML_PATH = 'index.html'
-
-const js = () => gulp.src(JS_PATH)
-  .pipe(rename('app.js'))
-  .pipe(uglify())
-  .pipe(gulp.dest(OUTPUT_PATH))
-
-const cleanDist = () => gulp.src([
-  `${OUTPUT_PATH}/*`,
-], { read: false })
-  .pipe(clean())
-
-const html = () => gulp.src('index.html')
-  .pipe(replace('<link rel="stylesheet" href="./css/main.css">', '<link rel="stylesheet" href="style.css">'))
-  .pipe(replace('<script defer src="./js/main.js"></script>', '<script defer src="./app.js"></script>'))
-  .pipe(gulp.dest(OUTPUT_PATH))
-
-const css = () => gulp.src(CSS_PATH)
-  .pipe(concat('style.css'))
-  .pipe(cleanCSS({ compatibility: 'ie8' }))
-  .pipe(gulp.dest(OUTPUT_PATH))
-
-const favicon = () => gulp.src('favicon.ico')
-  .pipe(gulp.dest(OUTPUT_PATH))
-
-const images = () => gulp.src('img/*')
-  .pipe(image())
-  .pipe(gulp.dest(`${OUTPUT_PATH}/img`))
-
-const fonts = () => gulp.src('fonts/*')
-  .pipe(gulp.dest(`${OUTPUT_PATH}/fonts`))
-
-
-const watcher = gulp.watch([CSS_PATH, JS_PATH, HTML_PATH])
-
-export const watch = () => {
-  browserSync.init({
-    server: {
-      baseDir: './'
-    }
-  })
-
-  watcher.on('change', browserSync.reload)
+const inpitDir = 'src'
+const outputDir = 'dist'
+const path = {
+  input: {
+    js: inpitDir + '/js/main.js',
+    css: inpitDir + '/css/**/*.css',
+    html: inpitDir + '/index.html',
+    image: inpitDir + '/img/*',
+    font: inpitDir + '/fonts/*',
+    favicon: inpitDir + '/favicon.ico',
+  },
+  output: {
+    js: outputDir,
+    css: outputDir,
+    html: outputDir,
+    image: outputDir + '/img',
+    font: outputDir + '/fonts',
+    favicon: outputDir,
+  },
 }
 
-export const dev = gulp.series(
-  cleanDist,
-  gulp.parallel(
-    css,
-    html,
-    js,
-    favicon,
-    images,
-    fonts
-  ),
-)
+const js = () => gulp.src(path.input.js)
+  .pipe(rename('app.js'))
+  .pipe(uglify())
+  .pipe(gulp.dest(path.output.js))
+
+const css = () => gulp.src(path.input.css)
+  .pipe(concat('style.css'))
+  .pipe(cleanCSS({ compatibility: 'ie8' }))
+  .pipe(gulp.dest(path.output.css))
+
+const cleanDist = () => gulp.src(outputDir + '/*', { read: false })
+  .pipe(clean())
+
+const html = () => gulp.src(path.input.html)
+  .pipe(replace('<link rel="stylesheet" href="./css/main.css" />', '<link rel="stylesheet" href="./style.css" />'))
+  .pipe(replace('<script defer src="./js/main.js"></script>', '<script defer src="./app.js"></script>'))
+  .pipe(gulp.dest(path.output.html))
+
+const images = () => gulp.src(path.input.image)
+  .pipe(image())
+  .pipe(gulp.dest(path.output.image))
+
+const fonts = () => gulp.src(path.input.font)
+  .pipe(gulp.dest(path.output.font))
+
+const favicon = () => gulp.src(path.input.favicon)
+  .pipe(gulp.dest(path.output.favicon))
+
+export const dev = () => {
+  gulp.watch(path.input.js, js)
+  gulp.watch(path.input.css, css)
+  gulp.watch(path.input.html, html)
+}
 
 export default gulp.series(
   cleanDist,
