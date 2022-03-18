@@ -1,0 +1,13 @@
+@import "_normalize.css";
+@import "_variables.css";
+@import "_fonts.css";
+@import "_vendor.css";
+@import "_global.css";
+@import "_overall.css";
+
+@import "./components/header.css";
+@import "./components/burger.css";
+@import "./components/first.css";
+@import "./components/second.css";
+@import "./components/third.css";
+@import "./components/footer.css";

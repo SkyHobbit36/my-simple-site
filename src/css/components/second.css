@@ -1,37 +1,101 @@
 .second {
   padding-top: 122px;
-  padding-bottom: 192px;
+  padding-bottom: 122px;
   background-color: var(--dark-grey-color);
 }
-.second h2 {
+.second__title {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 56px;
   margin-bottom: 97px;
   color: var(--white-color);
   text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
-.second__items {
+.second__list {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-.second__list-item {
-  flex: 0 0 25%;
-  padding: 0 42px;
+.second__item {
+  padding: 0 3%;
+  max-width: 25%;
+  margin-bottom: 70px;
 }
-.second__list-item:not(:last-child) {
+.second__item:not(:last-child) {
   border-right: 2px solid #181818;
 }
-.second__list-item h4 {
+.second__item-title {
   margin-bottom: 30px;
-  font-weight: bold;
+  font-weight: 700;
+  font-size: 24px;
   line-height: 28px;
   text-align: center;
   color: var(--tiger-orange-color);
 }
-.second__list-item p {
+.second__item-text {
   text-align: justify;
   font-weight: 300;
   font-size: 16px;
   line-height: 19px;
   color: var(--winter-hazel-color);
+}
+
+@media (max-width: 895px) {
+  .second {
+    padding-bottom: 60px;
+  }
+  .second__title {
+    font-size: 30px;
+    line-height: 40px;
+  }
+  .second__item {
+    max-width: 50%;
+    padding: 0 5%;
+  }
+  .second__item:not(:last-child) {
+    border-right: 0px;
+  }
+  .second__item:nth-child(odd) {
+    border-right: 2px solid #181818;
+  }
+}
+
+@media (max-width: 680px) {
+  .second {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .second__title {
+    margin-bottom: 30px;
+  }
+  .second__item {
+    margin-bottom: 30px;
+  }
+  .second__item-title {
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .second__item-text {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+@media (max-width: 420px) {
+  .second__title {
+    font-size: 20px;
+    line-height: 25px;
+    white-space: normal;
+  }
+  .second__item {
+    max-width: 100%;
+    padding: 0;
+  }
+  .second__item:nth-child(odd) {
+    border-right: 0px;
+  }
 }

@@ -1,11 +1,12 @@
 import gulp from 'gulp'
 import cleanCSS from 'gulp-clean-css'
 import clean from 'gulp-clean'
-import concat from 'gulp-concat'
+// import concat from 'gulp-concat'
 import replace from 'gulp-replace'
 import image from 'gulp-imagemin'
 import uglify from 'gulp-uglify'
 import rename from 'gulp-rename'
+import concatCss from 'gulp-concat-css'
 
 
 const inpitDir = 'src'
@@ -13,7 +14,7 @@ const outputDir = 'dist'
 const path = {
   input: {
     js: inpitDir + '/js/main.js',
-    css: inpitDir + '/css/**/*.css',
+    css: inpitDir + '/css/',
     html: inpitDir + '/index.html',
     image: inpitDir + '/img/*',
     font: inpitDir + '/fonts/*',
@@ -34,8 +35,9 @@ const js = () => gulp.src(path.input.js)
   .pipe(uglify())
   .pipe(gulp.dest(path.output.js))
 
-const css = () => gulp.src(path.input.css)
-  .pipe(concat('style.css'))
+export const css = () => gulp.src(path.input.css + 'main.css')
+  .pipe(concatCss('style.css'))
+  .pipe(rename('style.css'))
   .pipe(cleanCSS({ compatibility: 'ie8' }))
   .pipe(gulp.dest(path.output.css))
 
@@ -59,7 +61,7 @@ const favicon = () => gulp.src(path.input.favicon)
 
 export const dev = () => {
   gulp.watch(path.input.js, js)
-  gulp.watch(path.input.css, css)
+  gulp.watch(path.input.css + '**/*.css', css)
   gulp.watch(path.input.html, html)
 }
 

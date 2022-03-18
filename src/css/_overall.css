@@ -1,34 +1,28 @@
 .container {
-  max-width: 1270px;
-  padding: 0 30px;
+  max-width: 1294px;
+  padding: 0 20px;
   margin: 0 auto;
-}
-
-h1 {
-  font-size: 72px;
-  text-transform: uppercase;
-}
-h2 {
-  font-size: 46px;
-  text-transform: uppercase;
-}
-h3 {
-  font-size: 32px;
-  text-transform: uppercase;
-}
-h4 {
-  font-size: 24px;
 }
 
 .lock {
   overflow: hidden;
 }
 
-.greenBgText {
+.green-text-bg {
   background-color: var(--green-color);
 }
 
-.yellowGradientBg {
-  /* background: linear-gradient(95.38deg, #F3C03B 23.75%, #CB8A29 90.88%); */
+.yellow-gradient-bg {
   background: linear-gradient(104deg, #c9950c, #efc24b, #ad7013 80%);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
