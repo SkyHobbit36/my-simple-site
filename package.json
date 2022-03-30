@@ -8,7 +8,8 @@
   "type": "module",
   "scripts": {
     "build": "gulp",
-    "dev": "gulp dev"
+    "dev": "gulp dev",
+    "watch": "gulp watch"
   },
   "devDependencies": {
     "eslint": "^8.9.0",

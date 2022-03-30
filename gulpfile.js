@@ -61,10 +61,18 @@ const fonts = () => gulp.src(path.input.font)
 const favicon = () => gulp.src(path.input.favicon)
   .pipe(gulp.dest(path.output.favicon))
 
-export const dev = () => {
+export const watch = () => {
   gulp.watch(path.input.js, js)
   gulp.watch(path.input.css + '**/*.css', css)
   gulp.watch(path.input.html, html)
+}
+
+export const dev = () => {
+  gulp.parallel(
+    css,
+    html,
+    js
+  )
 }
 
 export default gulp.series(
