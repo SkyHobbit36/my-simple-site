@@ -1,0 +1,23 @@
+.footer {
+  background-color: var(--dark-grey-color);
+  padding: 100px 20px;
+}
+
+.footer__title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+  text-transform: uppercase;
+
+  color: var(--white-color);
+  margin-bottom: 20px;
+}
+
+.footer__text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: var(--white-color);
+}

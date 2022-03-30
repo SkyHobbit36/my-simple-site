@@ -11,7 +11,7 @@
   color: var(--white-color);
   text-align: center;
   text-transform: uppercase;
-  white-space: nowrap;
+  /* white-space: nowrap; */
 }
 
 .second__list {
@@ -51,6 +51,8 @@
   .second__title {
     font-size: 30px;
     line-height: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
   }
   .second__item {
     max-width: 50%;
@@ -89,7 +91,9 @@
   .second__title {
     font-size: 20px;
     line-height: 25px;
-    white-space: normal;
+    padding-left: 0;
+    padding-right: 0;
+    /* white-space: normal; */
   }
   .second__item {
     max-width: 100%;

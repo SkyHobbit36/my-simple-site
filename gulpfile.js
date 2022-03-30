@@ -1,7 +1,6 @@
 import gulp from 'gulp'
 import cleanCSS from 'gulp-clean-css'
 import clean from 'gulp-clean'
-// import concat from 'gulp-concat'
 import replace from 'gulp-replace'
 import image from 'gulp-imagemin'
 import uglify from 'gulp-uglify'
@@ -38,7 +37,10 @@ const js = () => gulp.src(path.input.js)
 export const css = () => gulp.src(path.input.css + 'main.css')
   .pipe(concatCss('style.css'))
   .pipe(rename('style.css'))
-  .pipe(cleanCSS({ compatibility: 'ie8' }))
+  .pipe(cleanCSS({
+    compatibility: 'ie8',
+    rebaseTo: 'outputDir'
+  }))
   .pipe(gulp.dest(path.output.css))
 
 const cleanDist = () => gulp.src(outputDir + '/*', { read: false })
